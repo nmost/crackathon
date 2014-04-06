@@ -30,6 +30,8 @@ var load = function(){
     'tiles.png', 
     'collectibleSpawnBL.json',
     'enemiesBL.json',
+    'enemiesUL.json',
+    'collectibleSpawnUL.json',
     'background.jpg'
   ];
 
@@ -43,7 +45,9 @@ var load = function(){
     Q.startCountDownScore();
     Q.audioStartGame();
     Q.stageGame.loadAssets(Q.asset('collectibleSpawnBL.json'));
+    Q.stageGame.loadAssets(Q.asset('collectibleSpawnUL.json'));
     Q.stageGame.loadAssets(Q.asset('enemiesBL.json'));
+    Q.stageGame.loadAssets(Q.asset('enemiesUL.json'));
   });
 
   Q.animations('player', {

@@ -46,6 +46,7 @@ var initializeEnemies = function(){
   Q.Enemy.extend('Councilman', {
     hitPlayerEvent: function(collision){
       this._super(collision);
+      Q.endGame("Game over. You have been impeached");
     } 
   });
   

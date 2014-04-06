@@ -6,6 +6,7 @@ init = function(){
     })
     .controls();
   initializeGame();
+  initializeUtil();
   initializePlayer();
   initializeEnemies();
   var assets = [

@@ -31,6 +31,8 @@ var load = function(){
     'collectibleSpawnBL.json',
     'enemiesBL.json',
     'enemiesUL.json',
+    'enemiesUR.json',
+    'collectibleSpawnUR.json',
     'collectibleSpawnUL.json',
     'background.jpg'
   ];

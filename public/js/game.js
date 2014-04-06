@@ -8,9 +8,8 @@ var initializeGame = function(){
       asset: "background.jpg", 
       speedX: 0.0, 
       speedY: 0.0,
-      x: -10000,
-      repeatX: false, 
-      //repeatY: false 
+      x: -500,
+      repeatX: true
     }));
     stage.collisionLayer(new Q.TileLayer({
       dataAsset: 'level.json',
@@ -21,8 +20,8 @@ var initializeGame = function(){
       blockTileH: 10
     }));
   //ACTUAL START
-   // var player = stage.insert(new Q.Player({x: 100, y:2000})); 
-    var player = stage.insert(new Q.Player({x: 900, y:1300})); 
+    var player = stage.insert(new Q.Player({x: 100, y:2000})); 
+    //var player = stage.insert(new Q.Player({x: 900, y:900})); 
     //stage.insert(new Q.Popo({ x:700, y: 0 }));
     stage.add("viewport").follow(player);
   });
@@ -93,12 +92,25 @@ var initializeGame = function(){
       })
     );
 
-    stage.changeScore = function(score){
+    stage.changeScore = function(score, color){
       stage.lives.p.label = "Party Score:" + score;
-      stage.lives.p.color = "red";
+      if (color != null){
+        stage.lives.p.color = color;
+        setTimeout(function(){
+          stage.lives.p.color = "white"; 
+        }, 200);
+      }
+      
     };
-    stage.changePublicOpinion = function(po){
+    stage.changePublicOpinion = function(po, color){
       stage.publicOpinion.p.label = "Public Opinion:" + po;
+      if (color != null){
+        stage.publicOpinion.p.color = color;
+        setTimeout(function(){
+          stage.publicOpinion.p.color = "white"; 
+          Q.publicOpinionColorFlash = "white";
+        }, 200);
+      }
     };
 
     stage.lives = stage.insert(new Q.UI.Text({ 

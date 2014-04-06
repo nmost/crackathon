@@ -3,7 +3,9 @@ initializeEvent = function(){
   Q.endGame = function(){
     Q.stageScene("endGame",1, { label: "Game over.  You have been impeached." }); 
     //collision.obj.destroy(); 
-    document.body.appendChild('<p>hi</p>');
+//    document.body.appendChild('<p>hi</p>');
+//  
+    Q.audioEndGame();
   };
 
   Q.startCountDownScore = function(){
@@ -17,10 +19,12 @@ initializeEvent = function(){
   };
 
   Q.addScore = function(incr){
+    Q.scoreColorFlash = "green";
     Q.state.inc('score', incr);
   };
 
   Q.decScore = function(decr){
+    Q.scoreColorFlash = "red";
     if(Q.state.get('score') > 0){
       Q.state.dec('score', 1);
     }

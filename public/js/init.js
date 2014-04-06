@@ -28,8 +28,8 @@ var load = function(){
     'sprites.json', 
     'level.json', 
     'tiles.png', 
-    'crackSpawn.json',
-    'enemies.json',
+    'collectibleSpawnBL.json',
+    'enemiesBL.json',
     'background.jpg'
   ];
 
@@ -42,9 +42,8 @@ var load = function(){
     Q.stageGameStats = Q.stageScene('gameStats', 1);
     Q.startCountDownScore();
     Q.audioStartGame();
-    var ast = Q.asset('crackSpawn.json');
-    Q.stageGame.loadAssets(ast);//Q.asset('crackSpawn.js'));
-    Q.stageGame.loadAssets(Q.asset('enemies.json'));
+    Q.stageGame.loadAssets(Q.asset('collectibleSpawnBL.json'));
+    Q.stageGame.loadAssets(Q.asset('enemiesBL.json'));
   });
 
   Q.animations('player', {
@@ -71,12 +70,12 @@ var load = function(){
 
 var initializeStates = function(){
   Q.state.set({ score: 0, publicOpinion: 100 });
-  Q.state.on('change.score', this,  function() {
-    Q.stageGameStats.changeScore(Q.state.get('score'));
+  Q.state.on('change.score', this,  function(a, b) {
+    Q.stageGameStats.changeScore(Q.state.get('score'), Q.scoreColorFlash);//SO MUCH HACK
 
   });
   Q.state.on('change.publicOpinion', this,  function() {
-    Q.stageGameStats.changePublicOpinion(Q.state.get('publicOpinion'));
+    Q.stageGameStats.changePublicOpinion(Q.state.get('publicOpinion'), Q.publicOpinionColorFlash);
     if (Q.state.get('publicOpinion') == 0){
       Q.endGame(); 
     }

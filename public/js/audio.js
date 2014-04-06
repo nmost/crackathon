@@ -7,6 +7,12 @@ initializeAudio = function(){
     hitJournalist: [
       'best_father.mp3'
     ],
+    hitPopo: [
+      'oriental_flavour.mp3' 
+    ],
+    endGame: [
+      'yes_smoked_crack.mp3'
+    ]
   };
 
   Q.audioAssetsToArray = function(){
@@ -24,6 +30,14 @@ initializeAudio = function(){
   Q.audioHitJournalist = function() {
     Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.hitJournalist));
   };
+  Q.audioHitPopo = function() {
+    Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.hitPopo));
+  };
+
+  Q.audioEndGame = function() {
+    Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.endGame));
+  };
+
 
   Q.playAudio = function(mp3File){
     try{

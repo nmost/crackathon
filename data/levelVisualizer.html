@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+  <style>
+    .row { height: 10px;  margin: 0; display: block; }
+    .item { width: 10px; height: 10px; margin: 0; display: inline-block; }
+    .black { background: black; }
+  </style>
+</head>
+<body>
+  <script>
+    $(function(){
+        $.ajax({
+          url: "level.json",
+          dataType: "json",
+          error: function(xhr, textStatus, errorThrown){
+            console.log(xhr, textStatus, errorThrown);
+            },
+          success: function(data) {
+            console.log(data.length);
+            console.log(data);
+            for (var r = 0; r < data.length; r++)
+            {
+              var s = $("<div class='row'></div>");
+              for (var i = 0; i< data[r].length; i++)
+              {
+                if (data[r][i])
+                  s.append("<div class='black item'></div>");
+                else
+                  s.append("<div class='item'></div>");
+              }
+              $("body").append(s);
+          }
+        }
+      });
+    });
+  </script>
+</body>

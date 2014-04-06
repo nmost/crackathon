@@ -12,7 +12,7 @@ var initializeGame = function(){
     }));
 
     var player = stage.insert(new Q.Player()); 
-    stage.insert(new Q.Journalist({ x: 700, y: 0 }));
+    stage.insert(new Q.Popo({ x:700, y: 0 }));
     stage.add("viewport").follow(player);
   });
 
@@ -54,15 +54,22 @@ var initializeGame = function(){
       })
     );
 
-    var lives = stage.insert(new Q.UI.Text({ 
-      label: "Lives x 3",
+    stage.changeScore = function(score){
+      stage.lives.p.label = "Party Score:" + score;
+    };
+    stage.changePublicOpinion = function(po){
+      stage.publicOpinion.p.label = "Public Opinion:" + po;
+    };
+
+    stage.lives = stage.insert(new Q.UI.Text({ 
+        label: "Party Score:0",
         color: "white",
         x: -300,
         y: 0
     }),statsContainer);
 
-    var coins = stage.insert(new Q.UI.Text({ 
-      label: "Coins x 0",
+    stage.publicOpinion = stage.insert(new Q.UI.Text({ 
+      label: "Public Opinion:" + Q.state.get('publicOpinion'),
         color: "white",
         x: 300,
         y: 0

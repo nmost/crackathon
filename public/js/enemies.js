@@ -26,16 +26,20 @@ var initializeEnemies = function(){
   });
 
 
-  Q.Enemy.extend('Cop', {
+  Q.Enemy.extend('Popo', {
     hitPlayerEvent: function(collision){
       this._super(collision);
+      if(Q.state.get('score') > 0){
+        Q.state.dec('score', 1);
+      }
+
     } 
   });
 
   Q.Enemy.extend('Journalist', {
     hitPlayerEvent: function(collision){
       this._super(collision);
-      Q.state.inc('score', 1);
+      Q.state.dec('publicOpinion', 1);
     } 
   });
 

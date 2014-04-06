@@ -19,12 +19,17 @@ init = function(){
     Q.compileSheets("sprites.png","sprites.json" ); 
     Q.sheet("tiles","tiles.png", { tilew: 32, tileh: 32 });
     Q.stageScene('level1');
-    Q.stageScene('gameStats', 1);
+    Q.stageGameStats = Q.stageScene('gameStats', 1);
   });
 
-  Q.reset({ score: 0, lives: 2 });
-  Q.state.on('change.score',this,  function() {
+  Q.state.set({ score: 1, publicOpinion: 100 });
+  Q.state.on('change.score', this,  function() {
+    Q.stageGameStats.changeScore(Q.state.get('score'));
   });
+  Q.state.on('change.publicOpinion', this,  function() {
+    Q.stageGameStats.changePublicOpinion(Q.state.get('publicOpinion'));
+  });
+
 }; 
 
 window.onload = function() {

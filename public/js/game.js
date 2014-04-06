@@ -20,8 +20,8 @@ var initializeGame = function(){
       blockTileH: 10
     }));
   //ACTUAL START
-    var player = stage.insert(new Q.Player({x:100, y:0})); 
-    var player = stage.insert(new Q.Player({x:1200, y:0})); 
+    //var player = stage.insert(new Q.Player({x:100, y:0})); 
+    var player = stage.insert(new Q.Player({x:2500, y:0})); 
     //stage.insert(new Q.Popo({ x:700, y: 0 }));
     stage.add("viewport").follow(player);
   });
@@ -55,7 +55,6 @@ var initializeGame = function(){
 
   Q.scene('endGame',function(stage) {
     document.getElementById("fordimage").style.display="block";
-    window.setTimeout( function() { location.reload(); }, 5000);
   });
 
   Q.scene("gameStats", function(stage) {

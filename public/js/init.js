@@ -48,8 +48,10 @@ var load = function(){
     Q.audioStartGame();
     Q.stageGame.loadAssets(Q.asset('collectibleSpawnBL.json'));
     Q.stageGame.loadAssets(Q.asset('collectibleSpawnUL.json'));
+    Q.stageGame.loadAssets(Q.asset('collectibleSpawnUR.json'));
     Q.stageGame.loadAssets(Q.asset('enemiesBL.json'));
     Q.stageGame.loadAssets(Q.asset('enemiesUL.json'));
+    Q.stageGame.loadAssets(Q.asset('enemiesUR.json'));
   });
 
   Q.animations('player', {

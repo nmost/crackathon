@@ -12,12 +12,12 @@ init = function(){
     'sprites.png', 
     'sprites.json', 
     'level.json', 
-    'tiles.png', 
+    'tilesSmall.png', 
     'background.jpg'
   ];
   Q.load(assets, function() {
     Q.compileSheets("sprites.png","sprites.json" ); 
-    Q.sheet("tiles","tiles.png", { tilew: 32, tileh: 32 });
+    Q.sheet("tiles","tilesSmall.png", { tilew: 10, tileh: 10 });
     Q.stageScene('level1');
     Q.stageGameStats = Q.stageScene('gameStats', 1);
   });

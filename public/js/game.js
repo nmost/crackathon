@@ -20,8 +20,8 @@ var initializeGame = function(){
       blockTileH: 10
     }));
   //ACTUAL START
-    var player = stage.insert(new Q.Player({x: 100, y:2000})); 
-    //var player = stage.insert(new Q.Player({x: 900, y:900})); 
+   // var player = stage.insert(new Q.Player({x: 100, y:2000})); 
+    var player = stage.insert(new Q.Player({x: 0, y:0})); 
     //stage.insert(new Q.Popo({ x:700, y: 0 }));
     stage.add("viewport").follow(player);
   });

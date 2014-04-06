@@ -3,18 +3,19 @@ initializeAudio = function(){
     startGame:[
       'crack_cocaine.mp3',
       'meet_you.mp3',
-      'drunken_stupours.mp3'
     ],
     hitJournalist: [
-      'best_father.mp3',
-      'enough.mp3'
+      'pussy.mp3',
+      'hit_in_the_face.mp3'
     ],
     hitPopo: [
-      'oriental_flavour.mp3'
+      'enough.mp3',
+      'absolutely_nothing_wrong.mp3'
     ],
     endGame: [
       'yes_smoked_crack.mp3',
       'billion.mp3',
+      'its_a_problem.mp3',
       'disaster.mp3'
     ],
     destroyPopo: [
@@ -32,7 +33,7 @@ initializeAudio = function(){
       'drunken_stupours.mp3'
     ],
     getCrack: [
-      'hahaha.mp3'   
+      "im_an_addict.mp3"
     ],
     lowOpinion : [
       'careful.mp3' 

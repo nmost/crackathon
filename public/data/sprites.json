@@ -19,10 +19,19 @@
   "popo":{
     "sx":60,
     "sy":60,
-    "cols":6,
+    "cols":7,
     "tilew":25,
     "tileh":50,
     "w": 175,
+    "frames": 7
+  },
+  "journalist":{
+    "sx":0,
+    "sy":120,
+    "cols":7,
+    "tilew":42,
+    "tileh":60,
+    "w": 255,
     "frames": 7
   }
 }

@@ -2,8 +2,8 @@ var initializeEnemies = function(){
   Q.Sprite.extend('Enemy', {
     init: function(p) {
       this._super(p, {
-        sheet: 'popo',
-        sprite: 'popo',
+        sheet: 'journalist',
+        sprite: 'journalist',
         vx: 100
       });
       this.add('2d, aiBounce, animation');
@@ -15,19 +15,26 @@ var initializeEnemies = function(){
       });
      this.on("bump.top",function(collision) {
        if(collision.obj.isA("Player")) { 
-         this.destroy();
+         this.deathAnimation();
          collision.obj.p.vy = -300;
        }
      });
     },
+    deathAnimation: function() {
+      this.play("die", 10);
+      var b = this;
+      window.setTimeout(function() {
+        b.destroy();
+      }, 200);
+    },
   
     step: function(dt) {
       if (this.p.vx > 0) {
-        this.play("run_right");
+        this.play("run_right", 0);
       } else if (this.p.vx < 0) {
-        this.play("run_left");
+        this.play("run_left", 0);
       } else {
-        this.play("stand_" + this.p.direction);
+        this.play("stand_" + this.p.direction, 0);
       }
     },
 
@@ -48,7 +55,6 @@ var initializeEnemies = function(){
     hitPlayerEvent: function(collision){
       this._super(collision);
       Q.decPublicOpinion(1);
-      Q.audioHitJournalist();
     } 
   });
 

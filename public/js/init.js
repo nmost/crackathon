@@ -58,7 +58,14 @@ var load = function(){
     stand_right: { frames: [3], rate: 1/2 },
     run_left: { frames: [1,0,2], rate: 1/2 },
     run_right: { frames: [4,3,5], rate: 1/2 },
-    die: {frames: [6], loop: false, rate: 1 }
+    die: {frames: [6], loop: false, rate: 1/2 }
+  });
+  Q.animations('journalist', {
+    stand_right: { frames: [0], rate: 1/6 },
+    stand_left: { frames: [3], rate: 1/6 },
+    run_right: { frames: [1,0,2], rate: 1/6 },
+    run_left: { frames: [4,3,5], rate: 1/6 },
+    die: {frames: [6], loop: false, rate: 1/2 }
   });
 }; 
 

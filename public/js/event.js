@@ -25,6 +25,9 @@ initializeEvent = function(){
 
   Q.decScore = function(decr){
     Q.scoreColorFlash = "red";
+    if(Q.state.get('score') == 10){
+      Q.audioLowOpinion();
+    }
     if(Q.state.get('score') > 0){
       Q.state.dec('score', 1);
     }

@@ -14,6 +14,7 @@ var initializeEnemies = function(){
        if(collision.obj.isA("Player")) { 
          this.deathAnimation();
          collision.obj.p.vy = -300;
+         this.destroyObject();
        }
      });
     },
@@ -33,6 +34,10 @@ var initializeEnemies = function(){
       } else {
         this.play("stand_" + this.p.direction, 0);
       }
+    },
+
+    destroyObject: function(collision){
+        
     },
 
     hitPlayerEvent: function(collision) {
@@ -60,7 +65,10 @@ var initializeEnemies = function(){
       this._super(collision);
       Q.decScore(1); 
       Q.audioHitPopo();
-    } 
+    } ,
+    destroyObject: function(collision){
+      Q.audioDestroyPopo();
+    }
   });
 
   Q.Enemy.extend('Journalist', {
@@ -76,7 +84,10 @@ var initializeEnemies = function(){
       Q.decPublicOpinion(1);
       Q.publicOpinionColorFlash = "red";
       Q.audioHitJournalist();
-    } 
+    } ,
+    destroyObject: function(collision){
+      Q.audioDestroyJournalist();
+    }
   });
 
 

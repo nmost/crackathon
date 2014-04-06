@@ -70,6 +70,7 @@ var load = function(){
     run_left: { frames: [4,3,5], rate: 1/6 },
     die: {frames: [6], loop: false, rate: 1/2 }
   });
+
 }; 
 
 var initializeStates = function(){

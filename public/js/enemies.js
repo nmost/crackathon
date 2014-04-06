@@ -48,6 +48,7 @@ var initializeEnemies = function(){
     hitPlayerEvent: function(collision){
       this._super(collision);
       Q.decPublicOpinion(1);
+      Q.audioHitJournalist();
     } 
   });
 

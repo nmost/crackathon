@@ -18,7 +18,19 @@ initializeAudio = function(){
   };
 
   Q.audioStartGame = function() {
-    Q.audio.play(Q.selectRandomItemFromArray(Q.audioFiles.startGame));
+    Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.startGame));
+  };
+
+  Q.audioHitJournalist = function() {
+    Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.hitJournalist));
+  };
+
+  Q.playAudio = function(mp3File){
+    try{
+      Q.audio.stop(); 
+      Q.audio.play(mp3File, 1);
+    }catch(e){
+    };
   };
 
 };

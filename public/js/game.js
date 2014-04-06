@@ -81,8 +81,10 @@ var initializeGame = function(){
   Q.scene("gameStats", function(stage) {
     var statsContainer = stage.insert(new Q.UI.Container({
         fill: "gray",
-        x: 960/2,
-        y: 620,
+       /* x: 960/2,
+        y: 620,*/
+        x:Q.width/2,
+        y:20,
         border: 1,
         shadow: 3,
         shadowColor: "rgba(0,0,0,0.5)",
@@ -93,6 +95,7 @@ var initializeGame = function(){
 
     stage.changeScore = function(score){
       stage.lives.p.label = "Party Score:" + score;
+      stage.lives.p.color = "red";
     };
     stage.changePublicOpinion = function(po){
       stage.publicOpinion.p.label = "Public Opinion:" + po;

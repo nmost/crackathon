@@ -2,7 +2,7 @@ var initializeCollectibles = function() {
   Q.Sprite.extend('Collectible', {
     init: function(p) {
       this._super(p, {
-        sheet: 'enemy',
+        sheet: 'crack',
         type: Q.SPRITE_DEFAULT,
         vx: 100
       });

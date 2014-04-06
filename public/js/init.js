@@ -8,6 +8,7 @@ init = function(){
   initializeGame();
   initializeUtil();
   initializePlayer();
+  initializeCollectibles();
   initializeEnemies();
   var assets = [
     'sprites.png', 
@@ -23,7 +24,7 @@ init = function(){
     Q.stageGameStats = Q.stageScene('gameStats', 1);
   });
 
-  Q.state.set({ score: 1, publicOpinion: 100 });
+  Q.state.set({ score: 0, publicOpinion: 100 });
   Q.state.on('change.score', this,  function() {
     Q.stageGameStats.changeScore(Q.state.get('score'));
   });
@@ -35,4 +36,9 @@ init = function(){
 
 window.onload = function() {
   init();
+};
+
+
+var gameLoop = funciton() {
+
 };

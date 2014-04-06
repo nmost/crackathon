@@ -3,6 +3,7 @@ var initializeGame = function(){
    * First stage
    */
   Q.scene('level1', function(stage) {
+    stage.add('world');
     stage.insert(new Q.Repeater({ asset: "background.jpg", speedX: 0.5, speedY: 0.5 }));
     stage.collisionLayer(new Q.TileLayer({
       dataAsset: 'level.json',
@@ -15,8 +16,9 @@ var initializeGame = function(){
 
     var player = stage.insert(new Q.Player()); 
     //stage.insert(new Q.Popo({ x:700, y: 0 }));
-    //stage.insert(new Q.Journalist({ x: 100, y: 0 }));
+    stage.insert(new Q.Journalist({ x: 300, y: 0 }));
     stage.insert(new Q.Councilman({ x: 200, y: 0 }));
+    stage.insert(new Q.Crack({ x: 25, y: -100 }));
     stage.add("viewport").follow(player);
   });
 

@@ -29,10 +29,7 @@ var initializeEnemies = function(){
   Q.Enemy.extend('Popo', {
     hitPlayerEvent: function(collision){
       this._super(collision);
-      if(Q.state.get('score') > 0){
-        Q.state.dec('score', 1);
-      }
-
+      Q.decScore(1); 
     } 
   });
 

@@ -6,7 +6,7 @@ var initializePlayer = function() {
         w: 32,
         h: 32,
         x: 100,
-        y: 1000,
+        y: 0,
         jumpSpeed: -350,
         speed: 250
       });

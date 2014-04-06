@@ -1,4 +1,5 @@
 var initializeGame = function(){ 
+      'best_father.mp3',
   /*
    * First stage
    */
@@ -92,14 +93,14 @@ var initializeGame = function(){
     };
 
     stage.lives = stage.insert(new Q.UI.Text({ 
-        label: "Party Score:0",
+        label: "Party Level:0",
         color: "white",
         x: -300,
         y: 0
     }),statsContainer);
 
     stage.publicOpinion = stage.insert(new Q.UI.Text({ 
-      label: "Public Opinion:" + Q.state.get('publicOpinion'),
+      label: "Public Approval:" + Q.state.get('publicOpinion'),
         color: "white",
         x: 300,
         y: 0

@@ -1,11 +1,8 @@
 var initializeEnemies = function(){
   Q.Sprite.extend('Enemy', {
-    init: function(p) {
-      this._super(p, {
-        sheet: 'journalist',
-        sprite: 'journalist',
-        vx: 100
-      });
+    init: function(p, options) {
+      options.vx = 100;
+      this._super(p, options);
       this.add('2d, aiBounce, animation');
       this.canHit = true;
       this.on("bump.left,bump.right,bump.bottom",function(collision) {
@@ -50,6 +47,15 @@ var initializeEnemies = function(){
 
 
   Q.Enemy.extend('Popo', {
+    init: function(p){
+      var options = {
+        sprite : 'popo',
+        sheet : 'popo' 
+      }
+      this._super(p, options); 
+      
+    },
+
     hitPlayerEvent: function(collision){
       this._super(collision);
       Q.decScore(1); 
@@ -58,6 +64,13 @@ var initializeEnemies = function(){
   });
 
   Q.Enemy.extend('Journalist', {
+    init: function(p){
+      var options = {
+        sprite : 'journalist',
+        sheet : 'journalist' 
+      }       
+      this._super(p, options);
+    },
     hitPlayerEvent: function(collision){
       this._super(collision);
       Q.decPublicOpinion(1);
@@ -66,12 +79,6 @@ var initializeEnemies = function(){
     } 
   });
 
-  Q.Enemy.extend('Councilman', {
-    hitPlayerEvent: function(collision){
-      this._super(collision);
-      Q.endGame("Game over. You have been impeached");
-    } 
-  });
 
   
 };

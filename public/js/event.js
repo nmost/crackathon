@@ -17,10 +17,15 @@ initializeEvent = function(){
   Q.stopCountDownScore = function(){
     window.clearInterval(Q.timer);
   };
-
+  Q.count = 0;
   Q.addScore = function(incr){
     Q.scoreColorFlash = "green";
     Q.state.inc('score', incr);
+    Q.count ++;
+    if (Q.count == 8){
+      Q.count = 0;
+      Q.audioGetCrack(); 
+    }
   };
 
   Q.decScore = function(decr){

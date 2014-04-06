@@ -31,7 +31,9 @@ initializeAudio = function(){
     getBooze: [
       'drunken_stupours.mp3'
     ],
-    getCrack: [],
+    getCrack: [
+      'hahaha.mp3'   
+    ],
     lowOpinion : [
       'careful.mp3' 
       ],

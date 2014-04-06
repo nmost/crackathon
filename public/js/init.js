@@ -74,7 +74,7 @@ var load = function(){
 }; 
 
 var initializeStates = function(){
-  Q.state.set({ score: 0, publicOpinion: 100 });
+  Q.state.set({ score: 0, publicOpinion: 50 });
   Q.state.on('change.score', this,  function(a, b) {
     Q.stageGameStats.changeScore(Q.state.get('score'), Q.scoreColorFlash);//SO MUCH HACK
 

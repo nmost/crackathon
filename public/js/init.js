@@ -21,13 +21,13 @@ var load = function(){
     'sprites.png', 
     'sprites.json', 
     'level.json', 
-    'tilesSmall.png', 
+    'tiles.png', 
     'background.jpg'
   ];
 
   Q.load(assets, function() {
     Q.compileSheets("sprites.png","sprites.json" ); 
-    Q.sheet("tiles","tilesSmall.png", { tilew: 10, tileh: 10 });
+    Q.sheet("tiles","tiles.png", { tilew: 20, tileh: 20 });
     Q.stageScene('level1');
     Q.stageGameStats = Q.stageScene('gameStats', 1);
     Q.startCountDownScore();

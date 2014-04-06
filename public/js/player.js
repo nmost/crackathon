@@ -3,12 +3,12 @@ var initializePlayer = function() {
     init: function(p) {
       this._super(p, {
         sheet: 'player',
-        w: 32,
-        h: 32,
+        w: 60,
+        h: 60,
         x: 100,
-        y: 0,
-        jumpSpeed: -350,
-        speed: 250
+        y: 2000,
+        jumpSpeed: -500,
+        speed: 300
       });
       this.add('2d, platformerControls');
       console.log(this);

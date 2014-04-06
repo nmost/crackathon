@@ -8,8 +8,8 @@ var initializeGame = function(){
     stage.collisionLayer(new Q.TileLayer({
       dataAsset: 'level.json',
       sheet: 'tiles',
-      tileW: 10,
-      tileH: 10,
+      tileW: 20,
+      tileH: 20,
       blockTileW: 10,  // Default pre-render size
       blockTileH: 10
     }));

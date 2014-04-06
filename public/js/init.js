@@ -10,6 +10,13 @@ init = function(){
   initializePlayer();
   initializeCollectibles();
   initializeEnemies();
+  
+  load();
+  initializeStates();
+}; 
+
+
+var load = function(){
   var assets = [
     'sprites.png', 
     'sprites.json', 
@@ -17,28 +24,33 @@ init = function(){
     'tilesSmall.png', 
     'background.jpg'
   ];
+
   Q.load(assets, function() {
     Q.compileSheets("sprites.png","sprites.json" ); 
     Q.sheet("tiles","tilesSmall.png", { tilew: 10, tileh: 10 });
     Q.stageScene('level1');
     Q.stageGameStats = Q.stageScene('gameStats', 1);
+    Q.startCountDownScore();
   });
+}; 
 
+var initializeStates = function(){
   Q.state.set({ score: 0, publicOpinion: 100 });
   Q.state.on('change.score', this,  function() {
     Q.stageGameStats.changeScore(Q.state.get('score'));
+
   });
   Q.state.on('change.publicOpinion', this,  function() {
     Q.stageGameStats.changePublicOpinion(Q.state.get('publicOpinion'));
+    if (Q.state.get('publicOpinion') == 0){
+      Q.endGame(); 
+    }
   });
 
-}; 
+
+}
 
 window.onload = function() {
   init();
 };
 
-
-var gameLoop = function() {
-
-};

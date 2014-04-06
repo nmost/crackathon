@@ -36,7 +36,7 @@ var initializeEnemies = function(){
   Q.Enemy.extend('Journalist', {
     hitPlayerEvent: function(collision){
       this._super(collision);
-      Q.state.dec('publicOpinion', 1);
+      Q.decPublicOpinion(1);
     } 
   });
 

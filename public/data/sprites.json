@@ -24,6 +24,7 @@
     "tileh":60,
     "frames":1
   },
+  "leaf":{
     "sx":120,
     "sy":60,
     "cols":1,

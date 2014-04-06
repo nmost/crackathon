@@ -11,6 +11,10 @@ var initializePlayer = function() {
       this.add('2d, platformerControls, animation');
       this.on('hit.sprite',function(collision) {
       });
+
+      Q.input.on('up', this, function(){
+        console.log('hi');
+      });
     },
     step: function(dt) {
       if (this.p.vx > 0) {

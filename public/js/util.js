@@ -4,8 +4,7 @@ initializeUtil = function() {
     return a;
   };
 
-  Q.randomNumber = function(max, min){
+  Q.randomNumber = function(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
-   
   };
 };

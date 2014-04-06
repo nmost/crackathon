@@ -2,7 +2,7 @@ initializeAudio = function(){
   Q.audioFiles = {
     startGame:[
       'crack_cocaine.mp3',
-      'meet_you.mp3'
+      'meet_you.mp3',
     ],
     hitJournalist: [
       'best_father.mp3'
@@ -38,6 +38,7 @@ initializeAudio = function(){
     Q.playAudio(Q.selectRandomItemFromArray(Q.audioFiles.endGame));
   };
 
+  Q.audioDestroyPopo = function(){};
 
   Q.playAudio = function(mp3File){
     try{

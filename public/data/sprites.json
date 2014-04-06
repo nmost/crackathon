@@ -8,12 +8,21 @@
     "w": 360,
     "frames":6
   },
-  "enemy":{
+  "crack":{
     "sx":0,
     "sy":60,
     "cols":1,
     "tilew":60,
-    "tileh":48,
+    "tileh":60,
     "frames":1
+  },
+  "popo":{
+    "sx":60,
+    "sy":60,
+    "cols":6,
+    "tilew":25,
+    "tileh":50,
+    "w": 175,
+    "frames": 7
   }
 }

@@ -2,10 +2,11 @@ var initializeEnemies = function(){
   Q.Sprite.extend('Enemy', {
     init: function(p) {
       this._super(p, {
-        sheet: 'enemy',
+        sheet: 'popo',
+        sprite: 'popo',
         vx: 100
       });
-      this.add('2d, aiBounce');
+      this.add('2d, aiBounce, animation');
 
       this.on("bump.left,bump.right,bump.bottom",function(collision) {
         if(collision.obj.isA("Player")) { 
@@ -20,6 +21,16 @@ var initializeEnemies = function(){
      });
     },
   
+    step: function(dt) {
+      if (this.p.vx > 0) {
+        this.play("run_right");
+      } else if (this.p.vx < 0) {
+        this.play("run_left");
+      } else {
+        this.play("stand_" + this.p.direction);
+      }
+    },
+
     hitPlayerEvent: function(collision) {
       collision.obj.p.vx = -300;
     } 

@@ -12,6 +12,7 @@ init = function(){
   initializeGame();
   initializeEvent();
   initializeAudio();
+  initializeUtil();
   initializePlayer();
   initializeCollectibles();
   initializeEnemies();
@@ -27,17 +28,23 @@ var load = function(){
     'sprites.json', 
     'level.json', 
     'tiles.png', 
+    'crackSpawn.json',
+    'enemies.json',
     'background.jpg'
-    'crack_cocaine.mp3'
   ];
 
-  Q.load(assets, function() {
+  assets = assets.concat(Q.audioAssetsToArray());
+
+  Q.load(assets, function(a) {
     Q.compileSheets("sprites.png","sprites.json" ); 
     Q.sheet("tiles","tiles.png", { tilew: 20, tileh: 20 });
-    Q.stageScene('level1');
+    Q.stageGame = Q.stageScene('level1');
     Q.stageGameStats = Q.stageScene('gameStats', 1);
-    Q.audioStartGame();
     Q.startCountDownScore();
+    Q.audioStartGame();
+    var ast = Q.asset('crackSpawn.json');
+    Q.stageGame.loadAssets(ast);//Q.asset('crackSpawn.js'));
+    Q.stageGame.loadAssets(Q.asset('enemies.json'));
   });
 
   Q.animations('player', {

@@ -4,7 +4,14 @@ var initializeGame = function(){
    */
   Q.scene('level1', function(stage) {
     stage.add('world');
-    stage.insert(new Q.Repeater({ asset: "background.jpg", speedX: 0.5, speedY: 0.5 }));
+    stage.insert(new Q.Repeater({ 
+      asset: "background.jpg", 
+      speedX: 0.0, 
+      speedY: 0.0,
+      x: -10000,
+      repeatX: false, 
+      //repeatY: false 
+    }));
     stage.collisionLayer(new Q.TileLayer({
       dataAsset: 'level.json',
       sheet: 'tiles',
@@ -13,12 +20,10 @@ var initializeGame = function(){
       blockTileW: 10,  // Default pre-render size
       blockTileH: 10
     }));
-
-    var player = stage.insert(new Q.Player()); 
+  //ACTUAL START
+   // var player = stage.insert(new Q.Player({x: 100, y:2000})); 
+    var player = stage.insert(new Q.Player({x: 900, y:1300})); 
     //stage.insert(new Q.Popo({ x:700, y: 0 }));
-    stage.insert(new Q.Journalist({ x: 300, y: 0 }));
-    stage.insert(new Q.Councilman({ x: 200, y: 0 }));
-    stage.insert(new Q.Crack({ x: 25, y: -100 }));
     stage.add("viewport").follow(player);
   });
 

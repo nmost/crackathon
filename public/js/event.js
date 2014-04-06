@@ -2,7 +2,8 @@ initializeEvent = function(){
 
   Q.endGame = function(){
     Q.stageScene("endGame",1, { label: "Game over.  You have been impeached." }); 
-    collision.obj.destroy(); 
+    //collision.obj.destroy(); 
+    document.body.appendChild('<p>hi</p>');
   };
 
   Q.startCountDownScore = function(){
@@ -26,7 +27,12 @@ initializeEvent = function(){
   };
 
   Q.decPublicOpinion = function(decr){
-      Q.state.dec('publicOpinion', decr);
+    Q.state.dec('publicOpinion', decr);
+  };
+
+  Q.eventLoadCrack = function(stage, x, y){
+    stage.insert(new Q.Crack({x:x, y:y})); 
+    stage.insert(new Q.Crack({ x: 190, y: 2000 }));
   };
 
         

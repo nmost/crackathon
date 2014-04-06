@@ -4,8 +4,7 @@ var initializePlayer = function() {
       this._super(p, {
         sheet: 'player',
         sprite: 'player',
-        x: 100,
-        y: 2000,
+        
         jumpSpeed: -500,
         speed: 300
       });

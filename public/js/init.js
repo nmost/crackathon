@@ -1,12 +1,17 @@
 init = function(){
-  Q = Quintus({ development: false })      
-    .include("Sprites, Scenes, Input, Anim,  2D, Touch, UI")
+  Q = Quintus({ 
+      development: false,
+      audioSupported: ['mp3']
+    })      
+    .include("Sprites, Scenes, Input, Anim,  2D, Touch, UI, Audio")
+    .enableSound()
     .setup({
       maximize: true
     })
     .controls();
   initializeGame();
-  initializeUtil();
+  initializeEvent();
+  initializeAudio();
   initializePlayer();
   initializeCollectibles();
   initializeEnemies();
@@ -23,6 +28,7 @@ var load = function(){
     'level.json', 
     'tiles.png', 
     'background.jpg'
+    'crack_cocaine.mp3'
   ];
 
   Q.load(assets, function() {
@@ -30,6 +36,7 @@ var load = function(){
     Q.sheet("tiles","tiles.png", { tilew: 20, tileh: 20 });
     Q.stageScene('level1');
     Q.stageGameStats = Q.stageScene('gameStats', 1);
+    Q.audioStartGame();
     Q.startCountDownScore();
   });
 

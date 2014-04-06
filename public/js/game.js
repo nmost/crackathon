@@ -7,12 +7,14 @@ var initializeGame = function(){
     stage.collisionLayer(new Q.TileLayer({
       dataAsset: 'level.json',
       sheet: 'tiles',
+      tileW: 10,
+      tileH: 10,
       blockTileW: 10,  // Default pre-render size
       blockTileH: 10
     }));
 
     var player = stage.insert(new Q.Player()); 
-    stage.insert(new Q.Journalist({ x: 700, y: 0 }));
+    stage.insert(new Q.Journalist({ x: 100, y: 0 }));
     stage.add("viewport").follow(player);
   });
 

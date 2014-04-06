@@ -19,7 +19,6 @@ var initializePlayer = function() {
       } else if (this.p.vx < 0) {
         this.play("run_left");
       } else {
-        console.log(this.p.direction);
         this.play("stand_" + this.p.direction);
       }
     }

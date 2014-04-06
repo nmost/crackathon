@@ -13,7 +13,7 @@ var initializePlayer = function() {
       });
 
       Q.input.on('up', this, function(){
-        console.log('hi');
+        Q.audioPlayerJump();
       });
     },
     step: function(dt) {

@@ -43,6 +43,7 @@ var initializeCollectibles = function() {
     hitPlayerEvent: function(collision) {
       this._super(collision);
       Q.addScore(3);
+      Q.audioGetLeaf();
     }
   });
 
@@ -59,6 +60,7 @@ var initializeCollectibles = function() {
     hitPlayerEvent: function(collision) {
       this._super(collision);
       Q.addScore(10);
+      Q.audioGetBooze();
     }
   });
 };

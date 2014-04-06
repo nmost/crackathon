@@ -9,7 +9,7 @@ var initializeEnemies = function(){
 
       this.on("bump.left,bump.right,bump.bottom",function(collision) {
         if(collision.obj.isA("Player")) { 
-          this.hitPlayerEvent(); 
+          this.hitPlayerEvent(collision); 
         }
       });
      this.on("bump.top",function(collision) {
@@ -20,14 +20,29 @@ var initializeEnemies = function(){
      });
     },
   
-    hitPlayerEvent: function(p) {
+    hitPlayerEvent: function(collision) {
+      collision.obj.p.vx = -300;
     } 
   });
 
 
   Q.Enemy.extend('Cop', {
-    hitPlayerEvent: function(p){
-      this._super(p);
+    hitPlayerEvent: function(collision){
+      this._super(collision);
     } 
   });
+
+  Q.Enemy.extend('Journalist', {
+    hitPlayerEvent: function(collision){
+      this._super(collision);
+      Q.state.inc('score', 1);
+    } 
+  });
+
+  Q.Enemy.extend('Councilman', {
+    hitPlayerEvent: function(collision){
+      this._super(collision);
+    } 
+  });
+  
 };

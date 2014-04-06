@@ -12,9 +12,11 @@ var initializeGame = function(){
     }));
 
     var player = stage.insert(new Q.Player()); 
+    stage.insert(new Q.Journalist({ x: 700, y: 0 }));
     stage.add("viewport").follow(player);
-    stage.insert(new Q.Cop({x: 700, y: 0}))
   });
+
+  
 
   Q.scene('startGame', function(stage) {
     container = stage.insert(new Q.UI.Container({
@@ -36,8 +38,37 @@ var initializeGame = function(){
 
     container.insert(button);
     container.fit(20);
-
+    
   });
+
+  Q.scene("gameStats", function(stage) {
+    var statsContainer = stage.insert(new Q.UI.Container({
+        fill: "gray",
+        x: 960/2,
+        y: 620,
+        border: 1,
+        shadow: 3,
+        shadowColor: "rgba(0,0,0,0.5)",
+        w: 960,
+        h: 40
+      })
+    );
+
+    var lives = stage.insert(new Q.UI.Text({ 
+      label: "Lives x 3",
+        color: "white",
+        x: -300,
+        y: 0
+    }),statsContainer);
+
+    var coins = stage.insert(new Q.UI.Text({ 
+      label: "Coins x 0",
+        color: "white",
+        x: 300,
+        y: 0
+    }),statsContainer);
+  });
+  
 
 
 };

@@ -3,8 +3,10 @@ var initializePlayer = function() {
     init: function(p) {
       this._super(p, {
         sheet: 'player',
-        x: 410,
-        y: 90
+        w: 64,
+        h: 64,
+        x: 220,
+        y: 2900
       });
       this.add('2d, platformerControls');
       this.on('hit.sprite',function(collision) {

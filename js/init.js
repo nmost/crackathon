@@ -19,6 +19,11 @@ init = function(){
     Q.compileSheets("sprites.png","sprites.json" ); 
     Q.sheet("tiles","tiles.png", { tilew: 32, tileh: 32 });
     Q.stageScene('level1');
+    Q.stageScene('gameStats', 1);
+  });
+
+  Q.reset({ score: 0, lives: 2 });
+  Q.state.on('change.score',this,  function() {
   });
 }; 
 

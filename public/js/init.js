@@ -32,6 +32,13 @@ var load = function(){
     Q.stageGameStats = Q.stageScene('gameStats', 1);
     Q.startCountDownScore();
   });
+
+  Q.animations('player', {
+    stand_left: { frames: [0], rate: 1/5 },
+    stand_right: { frames: [3], rate: 1/5 },
+    run_left: { frames: [1,0,2], rate: 1/5 },
+    run_right: { frames: [4,3,5], rate: 1/5 }
+  });
 }; 
 
 var initializeStates = function(){

@@ -2,9 +2,11 @@
   "player":{
     "sx":0,
     "sy":0,
-    "cols":1,
+    "cols":6,
     "tilew":60,
-    "tileh":60,"frames":1
+    "tileh":60,
+    "w": 360,
+    "frames":6
   },
   "enemy":{
     "sx":0,

@@ -57,6 +57,7 @@ var initializeGame = function(){
   Q.scene('endGame',function(stage) {
     document.getElementById("fordimage").style.display="block";
     window.setTimeout( function() { location.reload(); }, 5000);
+    Q.clearStages();
   });
 
   Q.scene("gameStats", function(stage) {

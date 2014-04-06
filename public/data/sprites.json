@@ -24,8 +24,15 @@
     "tileh":60,
     "frames":1
   },
-  "popo":{
     "sx":120,
+    "sy":60,
+    "cols":1,
+    "tilew":60,
+    "tileh":60,
+    "frames":1
+  },
+  "popo":{
+    "sx":180,
     "sy":60,
     "cols":7,
     "tilew":25,

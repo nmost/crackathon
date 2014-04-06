@@ -39,6 +39,6 @@ window.onload = function() {
 };
 
 
-var gameLoop = funciton() {
+var gameLoop = function() {
 
 };

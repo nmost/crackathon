@@ -55,7 +55,9 @@ var initializeGame = function(){
 
 
   Q.scene('endGame',function(stage) {
-    document.getElementById("fordimage").style.display="block";
+    document.getElementById("gameOver").style.display="block";
+    Q.pauseGame();
+    document.getElementById("score").innerHTML = Q.stageGameStats.score;
     window.setTimeout( function() { location.reload(); }, 5000);
     Q.clearStages();
   });
@@ -73,8 +75,10 @@ var initializeGame = function(){
       })
     );
 
+    this.score = 0;
     stage.changeScore = function(score, color){
       stage.lives.p.label = "Party Score:" + score;
+      this.score = score;
       if (color != null){
         stage.lives.p.color = color;
         setTimeout(function(){

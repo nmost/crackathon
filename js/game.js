@@ -55,7 +55,7 @@ var initializeGame = function(){
 
 
   Q.scene('endGame',function(stage) {
-    document.getElementById("tweetLink").href = "https://twitter.com/share/?url=http%3A%2F%2Fwww.robfordthegame.com&text=I%20just%20partied%20to%20" + Q.stageGameStats.score + "%20in%20Rob%20Ford%3A%20The%20Game!"
+    document.getElementById("tweetLink").href = "https://twitter.com/share/?url=http%3A%2F%2Fwww.robfordthegame.com&text=I%20just%20partied%20to%20" + Q.stageGameStats.score + "%20in%20Rob%20Ford%3A%20The%20Game!&hashtags=RobFordTheGame"
     document.getElementById("gameOver").style.display="block";
     Q.pauseGame();
     document.getElementById("score").innerHTML = Q.stageGameStats.score;
